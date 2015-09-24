@@ -19,7 +19,9 @@ class Loader(object):
             full_path = os.path.abspath(os.path.join(full_path, _mod_name + '.py'))
             with open(full_path, 'r') as fp:
                 try:
-                    imp.load_module(_mod_name, fp, full_path, ('.py', 'r', 1))
+                    mod = imp.find_module(_mod_name, [full_path])
+                    if not mod:
+                        imp.load_module(_mod_name, fp, full_path, ('.py', 'r', 1))
                 except ImportError:
                     pass
         os.chdir(cur_dir)
