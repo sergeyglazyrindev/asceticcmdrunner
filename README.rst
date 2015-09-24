@@ -10,40 +10,37 @@ Installation
 -----------
 
 Simply run:
-``bash
-python setup.py install
-``
+.. code-block:: bash
+    python setup.py install
 
 Usage
 -----------
 
 In your django like manage.py command loader, you need to trigger following:
-```python
-import os
-from acmdrunner import Loader
+.. code-block:: python
+    import os
+    from acmdrunner import Loader
 
-...
-make all your preparations, initialize project settings, etc
-...
+    ...
+    make all your preparations, initialize project settings, etc
+    ...
 
-Loader(os.path.dirname(__file__)).load()
-```
+    Loader(os.path.dirname(__file__)).load()
 
 Loader will search recursively in passed folder for folders with name management.
 And try to load from folders found file acr_commands.py
 
 An example of the file acr_commands.py:
-```python
-from src import register_command, BaseCommand
+.. code-block:: python
+    from src import register_command, BaseCommand
 
 
-class TestCommand(BaseCommand):
+    class TestCommand(BaseCommand):
 
-    def execute(self, *args):
-        pass
+        def execute(self, *args):
+            pass
 
-register_command('test', TestCommand)
-```
+    register_command('test', TestCommand)
 
 register_command registers specific command and handler for this command.
 You commands should implement execute method. Better to inherit from BaseCommand.
@@ -51,7 +48,6 @@ But as it is ascetic, you can simply pass class with execute method implemented.
 That's all!
 
 To run command, please trigger following call:
-```python
-from acmdrunner import run_command
-run_command(command_name, *args, **kwargs)
-```
+.. code-block:: python
+    from acmdrunner import run_command
+    run_command(command_name, *args, **kwargs)
