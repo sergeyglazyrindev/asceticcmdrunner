@@ -1,4 +1,4 @@
 class BaseCommand(object):
 
-    def execute(self, *args):
+    def execute(self, *args, **kwargs):
         raise NotImplementedError
