@@ -10,9 +10,9 @@ Installation
 -----------
 
 Simply run:
-```bash
+``bash
 python setup.py install
-```
+``
 
 Usage
 -----------
