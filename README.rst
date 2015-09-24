@@ -18,7 +18,7 @@ Simply run in your bash:
 Usage
 -----------
 
-In your django like manage.py command loader, you need to trigger following:
+In your **django like manage.py** command loader, you need to trigger following:
 
 .. code-block:: python
                 
@@ -48,8 +48,8 @@ An example of the file acr_commands.py:
 
     register_command('test', TestCommand)
 
-register_command registers specific command and handler for this command.
-You commands should implement execute method. Better to inherit from BaseCommand.
+**register_command** registers specific command and handler for this command.
+Your commands should implement execute method. Better to inherit from BaseCommand.
 But as it is ascetic, you can simply pass class with execute method implemented.
 That's all!
 
