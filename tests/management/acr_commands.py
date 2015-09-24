@@ -1,4 +1,4 @@
-from src import register_command, BaseCommand
+from src.acmdrunner import register_command, BaseCommand
 
 
 class TestCommand(BaseCommand):

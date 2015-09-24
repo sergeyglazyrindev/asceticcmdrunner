@@ -1,8 +1,8 @@
 import mock
 import os
 
-from src import Loader, run_command
-from src.helpers import _CMD_RUNNERS
+from src.acmdrunner import Loader, run_command
+from src.acmdrunner.helpers import _CMD_RUNNERS
 
 from unittest import TestCase
 
