@@ -12,6 +12,7 @@ Installation
 Simply run in your bash:
 
 .. code-block:: bash
+                
     python setup.py install
 
 Usage
@@ -20,6 +21,7 @@ Usage
 In your django like manage.py command loader, you need to trigger following:
 
 .. code-block:: python
+                
     import os
     from acmdrunner import Loader
 
@@ -35,6 +37,7 @@ And try to load from folders found file acr_commands.py
 An example of the file acr_commands.py:
 
 .. code-block:: python
+                
     from src import register_command, BaseCommand
 
 
@@ -53,5 +56,6 @@ That's all!
 To run command, please trigger following call:
 
 .. code-block:: python
+                
     from acmdrunner import run_command
     run_command(command_name, *args, **kwargs)
