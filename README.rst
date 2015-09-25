@@ -57,5 +57,5 @@ To run command, please trigger following call:
 
 .. code-block:: python
                 
-    from acmdrunner import run_command
-    run_command(command_name, *args, **kwargs)
+    from acmdrunner import execute_command
+    execute_command(command_name, *args, **kwargs)

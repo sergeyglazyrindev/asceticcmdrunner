@@ -7,7 +7,7 @@ def register_command(name, runner):
     _CMD_RUNNERS[name] = runner
 
 
-def run_command(name, *params, **param_kwargs):
+def execute_command(name, *params, **param_kwargs):
     if name not in _CMD_RUNNERS:
         raise ValueError('command {} is not loaded yet'.format(name))
     _CMD_RUNNERS[name]().execute(*params, **param_kwargs)
