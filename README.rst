@@ -29,7 +29,9 @@ In your **django like manage.py** command loader, you need to trigger following:
     make all your preparations, initialize project settings, etc
     ...
 
-    Loader(os.path.dirname(__file__)).load()
+    # package_name is an optional attribute which helps runner to build properly package name to import
+    # acr_commands file
+    Loader.load_from_directory(os.path.dirname(__file__))
 
 Loader will search recursively in passed folder for folders with name management.
 And try to load from folders found file acr_commands.py
@@ -59,3 +61,16 @@ To run command, please trigger following call:
                 
     from acmdrunner import execute_command
     execute_command(command_name, *args, **kwargs)
+
+
+Real usage example
+=============
+
+If you want to load all commands from specific namespace, you can implement following:
+
+.. code-block:: python
+
+    packages_to_traverse = ('rit.app', 'rit.core')
+    for package in packages_to_traverse:
+        Loader.load_from_package(package[0])
+    Loader.load_from_directory(os.path.dirname(os.getcwd()))

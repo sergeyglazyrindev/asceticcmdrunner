@@ -11,7 +11,7 @@ class TestLoader(TestCase):
 
     @mock.patch('tests.management.acr_commands.TestCommand.execute')
     def test(self, mocked_command):
-        Loader(os.path.dirname(__file__)).load()
+        Loader.load_from_directory(os.path.dirname(__file__))
         self.assertTrue('test' in _CMD_RUNNERS)
         execute_command('test', 'dsdas')
         self.assertEqual(
