@@ -29,9 +29,8 @@ In your **django like manage.py** command loader, you need to trigger following:
     make all your preparations, initialize project settings, etc
     ...
 
-    # package_name is an optional attribute which helps runner to build properly package name to import
-    # acr_commands file
     Loader.load_from_directory(os.path.dirname(__file__))
+    Loader.load_from_package('rit.app')
 
 Loader will search recursively in passed folder for folders with name management.
 And try to load from folders found file acr_commands.py
