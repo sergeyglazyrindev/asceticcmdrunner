@@ -15,6 +15,6 @@ class TestLoader(TestCase):
         self.assertTrue('test' in _CMD_RUNNERS)
         execute_command('test', 'dsdas')
         self.assertEqual(
-            mocked_command.call_args[0],
-            ('dsdas', )
+            mocked_command.call_args,
+            mock.call('dsdas', )
         )
