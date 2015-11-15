@@ -14,8 +14,8 @@ def load_commands_from_directory(project_path, prefix=None):
             module_name = prefix + '.' + module_name
         try:
             importlib.import_module(module_name + '.' + _mod_name)
-        except ImportError:
-            print('Error while importing module: {}'.format(module_name + '.' + _mod_name))
+        except ImportError as e:
+            print('Error while importing module: {}. Error: {}'.format(module_name + '.' + _mod_name, e))
 
 
 class Loader(object):
