@@ -8,6 +8,7 @@ python:
   - "pypy3"
 # command to install dependencies
 install: "pip install -r requirements.txt"
+sudo: false
 # command to run tests
 script: make test
 after_success: coveralls
