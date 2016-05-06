@@ -41,7 +41,6 @@ An example of the file acr_commands.py:
                 
     from src.acmdrunner import BaseCommand
     from src.acmdrunner.dispatcher import CommandDispatcher
-
     command_dispatcher = CommandDispatcher()
 
 
