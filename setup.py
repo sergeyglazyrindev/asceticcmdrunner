@@ -1,9 +1,8 @@
 import sys
+from setuptools import setup
 
 # dirty hack, always use wheel
 sys.argv.append('bdist_wheel')
-
-from setuptools import setup
 
 
 def readme():
@@ -18,6 +17,8 @@ setup(
     classifiers=[
         'Development Status :: 0.1 - Alpha',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Topic :: Misc',
     ],
