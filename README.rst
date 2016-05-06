@@ -13,7 +13,7 @@ Simply run in your bash:
 
 .. code-block:: bash
                 
-    python setup.py install
+    pip install acmdrunner
 
 Usage
 -----------
@@ -39,7 +39,10 @@ An example of the file acr_commands.py:
 
 .. code-block:: python
                 
-    from src import register_command, BaseCommand
+    from src.acmdrunner import BaseCommand
+    from src.acmdrunner.dispatcher import CommandDispatcher
+
+    command_dispatcher = CommandDispatcher()
 
 
     class TestCommand(BaseCommand):
@@ -47,7 +50,7 @@ An example of the file acr_commands.py:
         def execute(self, *args):
             pass
 
-    register_command('test', TestCommand)
+    command_dispatcher.register_command('test', TestCommand)
 
 **register_command** registers specific command and handler for this command.
 Your commands should implement execute method. Better to inherit from BaseCommand.
@@ -58,8 +61,8 @@ To run command, please trigger following call:
 
 .. code-block:: python
                 
-    from acmdrunner import execute_command
-    execute_command(command_name, *args, **kwargs)
+    from your_package_place import command_dispatcher
+    command_dispatcher.execute_command(command_name, *args, **kwargs)
 
 
 Real usage example
