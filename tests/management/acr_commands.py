@@ -1,4 +1,7 @@
-from src.acmdrunner import register_command, BaseCommand
+from src.acmdrunner import BaseCommand
+from src.acmdrunner.dispatcher import CommandDispatcher
+
+command_dispatcher = CommandDispatcher()
 
 
 class TestCommand(BaseCommand):
@@ -6,4 +9,4 @@ class TestCommand(BaseCommand):
     def execute(self, *args):
         pass
 
-register_command('test', TestCommand)
+command_dispatcher.register_command('test', TestCommand)
