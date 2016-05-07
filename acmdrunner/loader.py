@@ -1,9 +1,10 @@
 import glob
 import importlib
 import os
+from .exceptions import ImportModuleErrorException
 
 
-def load_commands_from_directory(project_path, package_prefix=None):
+def load_commands_from_directory(project_path, package=None):
     """This is a function which loads all command files, so all
     needed files will be processed, and all commands will be loaded. The task
     of this function is to import all files with name acr_commands.py
@@ -18,25 +19,31 @@ def load_commands_from_directory(project_path, package_prefix=None):
     :type package_prefix: string
     :returns: None
     :rtype: None
+    :raises acmdrunner.exceptions.ImportModuleErrorException: in case of any
+    unsuccessful import
     """
     _mod_name = 'acr_commands'
     for management_dir in glob.glob(os.path.join(
             project_path,
             '*/management')
     ):
-        if not management_dir.is_dir():
+        if not os.path.isdir(management_dir):
             continue
-        management_dirs = os.fsdecode(bytes(management_dir)).split(os.sep)
-        module_name = '.'.join(management_dirs[-2:])
-        if package_prefix:
-            module_name = package_prefix + '.' + module_name
+        management_dirs = management_dir.split(os.sep)
+        module_name = '.'.join(management_dirs[-3:])
+        if package:
+            module_name = module_name + '.' + _mod_name
+        else:
+            module_name = module_name + '.' + _mod_name
         try:
-            importlib.import_module(module_name + '.' + _mod_name)
+            importlib.import_module(module_name, package=package)
         except ImportError as e:
-            print('Error while importing module: {}. Error: {}'.format(
-                module_name + '.' + _mod_name,
-                e
-            ))
+            raise ImportModuleErrorException(
+                'Error while importing module: {}. Error: {}'.format(
+                    module_name + '.' + _mod_name,
+                    e
+                )
+            )
 
 
 class Loader(object):
@@ -63,4 +70,4 @@ class Loader(object):
         """
         package = importlib.import_module(package_name)
         project_path = os.path.dirname(package.__file__)
-        load_commands_from_directory(project_path, package_prefix=package_name)
+        load_commands_from_directory(project_path, package=package_name)

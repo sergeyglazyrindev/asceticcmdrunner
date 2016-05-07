@@ -39,8 +39,8 @@ An example of the file acr_commands.py:
 
 .. code-block:: python
                 
-    from src.acmdrunner import BaseCommand
-    from src.acmdrunner.dispatcher import CommandDispatcher
+    from acmdrunner import BaseCommand
+    from acmdrunner.dispatcher import CommandDispatcher
     command_dispatcher = CommandDispatcher()
 
 

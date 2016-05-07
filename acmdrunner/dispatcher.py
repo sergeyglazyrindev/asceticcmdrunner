@@ -1,3 +1,9 @@
+from .exceptions import (
+    CommandAlreadyRegisteredException,
+    CommandNotRegisteredException
+)
+
+
 class CommandDispatcher(object):
 
     __slots__ = ('registered_commands')
@@ -14,9 +20,13 @@ class CommandDispatcher(object):
         :type command_class: acmdrunner.commandbase.CommandDispatcher
         :returns: None
         :rtype: None
+        :raises acmdrunner.exceptions.CommandAlreadyRegisteredException: in
+        case if command has been registered already
         """
         if name in self.registered_commands:
-            raise ValueError('command {} already registered'.format(name))
+            raise CommandAlreadyRegisteredException(
+                'command {} already registered'.format(name)
+            )
         self.registered_commands[name] = command_class
 
     def execute_command(self, name, *params, **param_kwargs):
@@ -26,9 +36,13 @@ class CommandDispatcher(object):
         :type name: string
         :returns: None
         :rtype: None
+        :raises acmdrunner.exceptions.CommandNotRegisteredException: in case if
+        such command is not registered yet
         """
         if name not in self.registered_commands:
-            raise ValueError('command {} is not loaded yet'.format(name))
+            raise CommandNotRegisteredException(
+                'command {} is not loaded yet'.format(name)
+            )
         self.registered_commands[name]().execute(*params, **param_kwargs)
 
     def is_exists(self, name):
