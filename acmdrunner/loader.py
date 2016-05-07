@@ -1,6 +1,6 @@
+import glob
 import importlib
 import os
-from pathlib import Path
 
 
 def load_commands_from_directory(project_path, package_prefix=None):
@@ -20,7 +20,10 @@ def load_commands_from_directory(project_path, package_prefix=None):
     :rtype: None
     """
     _mod_name = 'acr_commands'
-    for management_dir in Path(project_path).glob('*/management'):
+    for management_dir in glob.glob(os.path.join(
+            project_path,
+            '*/management')
+    ):
         if not management_dir.is_dir():
             continue
         management_dirs = os.fsdecode(bytes(management_dir)).split(os.sep)
