@@ -1,6 +1,14 @@
 Ascetic Command Runner
 =============
 
+.. image:: https://api.travis-ci.org/sergeyglazyrindev/asceticcmdrunner.svg
+   :target: https://travis-ci.org/sergeyglazyrindev/asceticcmdrunner
+   :alt: Travis CI status
+
+.. image:: https://coveralls.io/repos/sergeyglazyrindev/asceticcmdrunner/badge.svg
+   :target: https://coveralls.io/r/sergeyglazyrindev/asceticcmdrunner
+   :alt: Coveralls status
+
 Not all of our projects are using either django or another *God* framework.
 So, once we start our hobby project, would be great to put into the game some commands.
 For example, maybe we need for our hobby project simple command test which loads custom TestRunner, etc
