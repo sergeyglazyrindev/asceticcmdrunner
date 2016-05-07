@@ -1,5 +1,6 @@
+**************************************
 Ascetic Command Runner
-=============
+**************************************
 
 .. image:: https://api.travis-ci.org/sergeyglazyrindev/asceticcmdrunner.svg
    :target: https://travis-ci.org/sergeyglazyrindev/asceticcmdrunner
@@ -14,8 +15,9 @@ So, once we start our hobby project, would be great to put into the game some co
 For example, maybe we need for our hobby project simple command test which loads custom TestRunner, etc
 In this case this package maybe handy for you!
 
+**************************************
 Installation
------------
+**************************************
 
 Simply run in your bash:
 
@@ -23,8 +25,9 @@ Simply run in your bash:
                 
     pip install acmdrunner
 
+**************************************
 Usage
------------
+**************************************
 
 In your **django like manage.py** command loader, you need to trigger following:
 
@@ -69,8 +72,9 @@ To run command, please trigger following call:
     command_dispatcher.execute_command(command_name, *args, **kwargs)
 
 
+**************************************
 Real usage example
-=============
+**************************************
 
 If you want to load all commands from specific namespace, you can implement following:
 
