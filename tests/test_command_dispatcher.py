@@ -25,8 +25,10 @@ class CommandDispatcherTestCase(TestCase):
         )
 
     def test_execute_command(self):
-        with mock.patch('tests.test_command_dispatcher.CommandExample', autospec=True)\
-                as command_mock:
+        with mock.patch(
+                'tests.test_command_dispatcher.CommandExample',
+                autospec=True
+        ) as command_mock:
             self.register_command()
             self.command_dispatcher.execute_command('test', '1', '2', ert=1)
             self.assertEquals(
