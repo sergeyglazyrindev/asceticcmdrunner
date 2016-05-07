@@ -39,17 +39,14 @@ An example of the file acr_commands.py:
 
 .. code-block:: python
                 
-    from acmdrunner import BaseCommand
     from acmdrunner.dispatcher import CommandDispatcher
     command_dispatcher = CommandDispatcher()
 
 
-    class TestCommand(BaseCommand):
+    def execute(*args):
+        pass
 
-        def execute(self, *args):
-            pass
-
-    command_dispatcher.register_command('test', TestCommand)
+    command_dispatcher.register_command('test', execute)
 
 **register_command** registers specific command and handler for this command.
 Your commands should implement execute method. Better to inherit from BaseCommand.

@@ -11,13 +11,12 @@ class CommandDispatcher(object):
     def __init__(self):
         self.registered_commands = {}
 
-    def register_command(self, name, command_class):
+    def register_command(self, name, callable_func_or_object):
         """Enables execution of the command with name `name`
 
         :param name: The name of the command
         :type name: string
-        :param command_class: a class of the command to be executed
-        :type command_class: acmdrunner.commandbase.CommandDispatcher
+        :param callable_func_or_object: any callable
         :returns: None
         :rtype: None
         :raises acmdrunner.exceptions.CommandAlreadyRegisteredException: in
@@ -27,7 +26,7 @@ class CommandDispatcher(object):
             raise CommandAlreadyRegisteredException(
                 'command {} already registered'.format(name)
             )
-        self.registered_commands[name] = command_class
+        self.registered_commands[name] = callable_func_or_object
 
     def execute_command(self, name, *params, **param_kwargs):
         """Execute given command
@@ -43,9 +42,9 @@ class CommandDispatcher(object):
             raise CommandNotRegisteredException(
                 'command {} is not loaded yet'.format(name)
             )
-        self.registered_commands[name]().execute(*params, **param_kwargs)
+        self.registered_commands[name](*params, **param_kwargs)
 
-    def is_exists(self, name):
+    def is_registered(self, name):
         """Is exists given command
 
         :param name: Name of the command
