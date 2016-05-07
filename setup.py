@@ -14,7 +14,6 @@ setup(
     version='0.3',
     description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
-    long_description=readme(),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
