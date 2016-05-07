@@ -11,17 +11,24 @@ def readme():
 
 setup(
     name='acmdrunner',
-    version='0.2',
+    version='0.3',
     description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
     long_description=readme(),
     classifiers=[
-        'Development Status :: 0.1 - Alpha',
+        'Development Status :: 4 - Beta',
+        'Topic :: Software Development :: Libraries :: Application Frameworks',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.1',
+        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Topic :: Misc',
+        'Programming Language :: Python :: 3.5',
+        'Intended Audience :: Developers'
     ],
     url='https://github.com/sergeyglazyrindev/asceticcmdrunner',
     author='Sergey Glazyrin',
@@ -36,5 +43,5 @@ setup(
     test_suite='tests',
     keywords=['command', 'dispatch'],
     download_url='https://github.com/sergeyglazyrindev/'
-    'asceticcmdrunner/tarball/0.2'
+    'asceticcmdrunner/tarball/0.3'
 )
