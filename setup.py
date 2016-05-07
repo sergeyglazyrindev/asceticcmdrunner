@@ -23,7 +23,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Topic :: Misc',
     ],
-    url='https://github.com/sergeyglazyrindev/acr',
+    url='https://github.com/sergeyglazyrindev/asceticcmdrunner',
     author='Sergey Glazyrin',
     author_email='sergey.glazyrin.dev@gmail.com',
     license='MIT',
@@ -34,4 +34,7 @@ setup(
         'testing': ['nose', 'mock'],
     },
     test_suite='tests',
+    keywords=['command', 'dispatch'],
+    download_url='https://github.com/sergeyglazyrindev/'
+    'asceticcmdrunner/tarball/0.1'
 )
