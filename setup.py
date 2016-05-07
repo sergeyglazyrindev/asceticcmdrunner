@@ -11,8 +11,10 @@ def readme():
 
 setup(
     name='acmdrunner',
-    version='0.6',
+    version='0.7',
     description='Ascetic command runner. The most ease way'
+    ' to power your python app with custom management commands',
+    long_description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -42,5 +44,5 @@ setup(
     test_suite='tests',
     keywords=['command', 'dispatch'],
     download_url='https://github.com/sergeyglazyrindev/'
-    'asceticcmdrunner/tarball/0.6'
+    'asceticcmdrunner/tarball/0.7'
 )
