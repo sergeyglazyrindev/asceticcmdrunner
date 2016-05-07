@@ -4,13 +4,16 @@ from pathlib import Path
 
 
 def load_commands_from_directory(project_path, package_prefix=None):
-    """This is a function which loads all command files, so all needed files will be processed,
-    and all commands will be loaded. The task of this function is to import all files with name acr_commands.py
+    """This is a function which loads all command files, so all
+    needed files will be processed, and all commands will be loaded. The task
+    of this function is to import all files with name acr_commands.py
     in project directory
     :param project_path: A path to the project
     :type project_path: string
-    :param package_prefix: the prefix of the package, it needs for proper import_module function usage.
-    An example: rit.core, that means all acr_commands.py files will be imported using such import path:
+    :param package_prefix: the prefix of the package, it needs for proper
+    import_module function usage.
+    An example: rit.core, that means all acr_commands.py files will be
+    imported using such import path:
     rit.core.module.management.acr_commands
     :type package_prefix: string
     :returns: None
@@ -27,7 +30,10 @@ def load_commands_from_directory(project_path, package_prefix=None):
         try:
             importlib.import_module(module_name + '.' + _mod_name)
         except ImportError as e:
-            print('Error while importing module: {}. Error: {}'.format(module_name + '.' + _mod_name, e))
+            print('Error while importing module: {}. Error: {}'.format(
+                module_name + '.' + _mod_name,
+                e
+            ))
 
 
 class Loader(object):

@@ -12,7 +12,8 @@ def readme():
 setup(
     name='acmdrunner',
     version='0.1',
-    description='Ascetic command runner. The most ease way to power your python app with custom management commands',
+    description='Ascetic command runner. The most ease way'
+    ' to power your python app with custom management commands',
     long_description=readme(),
     classifiers=[
         'Development Status :: 0.1 - Alpha',
