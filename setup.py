@@ -27,7 +27,6 @@ setup(
     author='Sergey Glazyrin',
     author_email='sergey.glazyrin.dev@gmail.com',
     license='MIT',
-    package_dir={'': 'src'},
     packages=['acmdrunner', ],
     include_package_data=True,
     zip_safe=False,

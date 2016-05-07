@@ -1,7 +1,7 @@
 import mock
 import os
 
-from src.acmdrunner import Loader
+from acmdrunner import Loader
 from . import management
 
 from unittest import TestCase
