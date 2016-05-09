@@ -5,13 +5,9 @@ from setuptools import setup
 sys.argv.append('bdist_wheel')
 
 
-def readme():
-    with open('README.rst') as f:
-        return f.read()
-
 setup(
     name='acmdrunner',
-    version='0.8',
+    version='0.9,',
     description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
     classifiers=[
@@ -42,5 +38,5 @@ setup(
     test_suite='tests',
     keywords=['command', 'dispatch'],
     download_url='https://github.com/sergeyglazyrindev/'
-    'asceticcmdrunner/tarball/0.8'
+    'asceticcmdrunner/tarball/0.9'
 )

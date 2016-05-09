@@ -30,13 +30,13 @@ def load_commands_from_directory(project_path, package=None):
         if not os.path.isdir(management_dir):
             continue
         management_dirs = management_dir.split(os.sep)
-        module_name = '.'.join(management_dirs[-3:])
+        module_name = '.'.join(management_dirs[-2:])
         if package:
-            module_name = module_name + '.' + _mod_name
+            module_name = package + '.' + module_name + '.' + _mod_name
         else:
             module_name = module_name + '.' + _mod_name
         try:
-            importlib.import_module(module_name, package=package)
+            importlib.import_module(module_name)
         except ImportError as e:
             raise ImportModuleErrorException(
                 'Error while importing module: {}. Error: {}'.format(
