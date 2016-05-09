@@ -7,7 +7,7 @@ sys.argv.append('bdist_wheel')
 
 setup(
     name='acmdrunner',
-    version='0.9,',
+    version='1',
     description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
     classifiers=[
@@ -38,5 +38,5 @@ setup(
     test_suite='tests',
     keywords=['command', 'dispatch'],
     download_url='https://github.com/sergeyglazyrindev/'
-    'asceticcmdrunner/tarball/0.9'
+    'asceticcmdrunner/tarball/1'
 )
