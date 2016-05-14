@@ -1,13 +1,9 @@
-import sys
 from setuptools import setup
-
-# dirty hack, always use wheel
-sys.argv.append('bdist_wheel')
 
 
 setup(
     name='acmdrunner',
-    version='1.1',
+    version='1.2',
     description='Ascetic command runner. The most ease way'
     ' to power your python app with custom management commands',
     classifiers=[
@@ -38,5 +34,5 @@ setup(
     test_suite='tests',
     keywords=['command', 'dispatch'],
     download_url='https://github.com/sergeyglazyrindev/'
-    'asceticcmdrunner/tarball/1.1'
+    'asceticcmdrunner/tarball/1.2'
 )
